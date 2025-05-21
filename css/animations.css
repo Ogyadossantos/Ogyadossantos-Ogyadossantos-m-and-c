@@ -1,0 +1,131 @@
+/* Logo Animation */
+[data-motion-logo] {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Hero Animation */
+[data-motion-hero] {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+/* Hero Text Animation */
+[data-motion-text] {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Card Animations */
+[data-motion-card] {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Button Animation */
+[data-motion-button] {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 0.8s ease forwards 0.6s;
+}
+
+/* Search Box Animation */
+[data-motion-search] {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.8s ease forwards 0.3s;
+}
+
+/* Checkout Steps Animation */
+[data-motion-steps] {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 0.3s;
+}
+
+/* Modal Animation */
+[data-motion-modal] {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Staggered Animations */
+.feature-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.category-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.category-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.category-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.category-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.location-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.location-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.location-card:nth-child(3) {
+    animation-delay: 0.3s;
+}

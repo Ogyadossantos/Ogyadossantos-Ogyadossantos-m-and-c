@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - M&C Supermarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://unpkg.com/framer-motion@10.12.0/dist/framer-motion.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo" data-motion-logo>
+                 <img src="images/1.jpg" alt="M&C Supermarket">
+                <span>M&C Supermarket</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="checkout.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-hero">
+        <div class="container">
+            <h1 data-motion-text>Checkout</h1>
+            <div class="checkout-steps" data-motion-steps>
+                <div class="step active"><span>1</span> Cart</div>
+                <div class="step"><span>2</span> Delivery</div>
+                <div class="step"><span>3</span> Payment</div>
+                <div class="step"><span>4</span> Confirmation</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-content">
+        <div class="container">
+            <div class="checkout-grid">
+                <div class="checkout-summary" data-motion-card>
+                    <h2>Your Order</h2>
+                    <div class="order-items" id="order-items">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span class="subtotal">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Delivery Fee</span>
+                            <span class="delivery-fee">$5.99</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total</span>
+                            <span class="total">$5.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-form" data-motion-card>
+                    <form id="checkoutForm">
+                        <div class="form-section" id="delivery-section">
+                            <h2>Delivery Information</h2>
+                            <div class="form-group">
+                                <label for="delivery-name">Full Name</label>
+                                <input type="text" id="delivery-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-address">Address</label>
+                                <input type="text" id="delivery-address" required>
+                            </div>
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="delivery-city">City</label>
+                                    <input type="text" id="delivery-city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery-zip">ZIP Code</label>
+                                    <input type="text" id="delivery-zip" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-phone">Phone Number</label>
+                                <input type="tel" id="delivery-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-time">Delivery Time</label>
+                                <select id="delivery-time" required>
+                                    <option value="">Select a time</option>
+                                    <option value="asap">As soon as possible</option>
+                                    <option value="morning">Morning (8AM-12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM-4PM)</option>
+                                    <option value="evening">Evening (4PM-8PM)</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-next" id="delivery-next">Continue to Payment</button>
+                            </div>
+                        </div>
+
+                        <div class="form-section hidden" id="payment-section">
+                            <h2>Payment Method</h2>
+                            <div class="payment-methods">
+                                <div class="payment-method active" data-method="credit">
+                                    <i class="far fa-credit-card"></i>
+                                    <span>Credit Card</span>
+                                </div>
+                                <div class="payment-method" data-method="paypal">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </div>
+                            </div>
+
+                            <div class="credit-card-form" id="credit-card-form">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="form-group-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Expiry Date</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvc">CVC</label>
+                                        <input type="text" id="card-cvc" placeholder="123" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">Name on Card</label>
+                                    <input type="text" id="card-name" required>
+                                </div>
+                            </div>
+
+                            <div class="paypal-form hidden" id="paypal-form">
+                                <p>You will be redirected to PayPal to complete your payment.</p>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-back" id="payment-back">Back to Delivery</button>
+                                <button type="submit" class="btn btn-primary">Place Order</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="checkout-modal hidden" id="confirmation-modal">
+        <div class="modal-content" data-motion-modal>
+            <i class="fas fa-check-circle"></i>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your order. Your order number is <strong>#12345</strong>.</p>
+            <p>We'll send you a confirmation email shortly.</p>
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>M&C Supermarket</h3>
+                    <p>Your one-stop shop for all grocery needs since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>upsa street</p>
+                    <p>Foodville, FC 12345</p>
+                    <p>Phone: 0238492392</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 M&C Supermarket. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

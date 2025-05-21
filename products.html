@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - M&C Supermarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://unpkg.com/framer-motion@10.12.0/dist/framer-motion.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo" data-motion-logo>
+                 <img src="images/1.jpg" alt="M&C Supermarket">
+                <span>M&C Supermarket</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="checkout.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="products-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <div class="search-filter">
+                <div class="search-box" data-motion-search>
+                    <input type="text" id="product-search" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-dropdown">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="meat">Meat & Poultry</option>
+                        <option value="bakery">Bakery</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="frozen">Frozen Foods</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-list">
+        <div class="container">
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>M&C Supermarket</h3>
+                    <p>Your one-stop shop for all grocery needs since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>upsa street</p>
+                    <p>Foodville, FC 12345</p>
+                    <p>Phone: 0238492392</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 M&C Supermarket. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
